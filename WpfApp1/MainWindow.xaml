@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Sokolov HW1" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Height="30" FontSize="16">
+            <MenuItem Header="Task 3" >
+                <MenuItem Name="Menu_3_1" Header="3.1 Tea information" FontSize="14" Click="Menu_3_1_Click" ToolTip="Отображение всех чаёв"/>
+                <MenuItem Name="Menu_3_2" Header="3.2 Green tea information" FontSize="14" Click="Menu_3_2_Click" ToolTip="Отображение всех зелёных чаёв"/>
+                <MenuItem Name="Menu_3_3" Header="3.3 No green and black tea" FontSize="14" Click="Menu_3_3_Click" ToolTip="Отображение всех чаёв, кроме зелёных и чёрных"/>
+            </MenuItem>
+            <MenuItem Header="Task 4">
+                <MenuItem Name="Menu_4_1" Header="4.1 Min cost" FontSize="14" Click="Menu_4_1_Click" ToolTip="Показать минимальную стоимость чая"/>
+                <MenuItem Name="Menu_4_2" Header="4.2 All min cost" FontSize="14" Click="Menu_4_2_Click" ToolTip="Показать все чаи с минимальной стоимостью"/>
+                <MenuItem Name="Menu_4_3" Header="4.3 cost more than AVG" FontSize="14" Click="Menu_4_3_Click" ToolTip="Показать все чаи со стоимостью выше средней"/>
+                <MenuItem Name="Menu_4_4" Header="4.4 Qnty on all types" FontSize="14" Click="Menu_4_4_Click" ToolTip="Показать количество единиц каждого вида чая"/>
+                <MenuItem Name="Menu_4_5" Header="4.5 Top-3 manufacturer" FontSize="14" Click="Menu_4_5_Click" ToolTip="Показать ТОП-3 стран по количеству чая"/>
+                <MenuItem Name="Menu_4_6" Header="4.6 Top-3 geen teas weight" FontSize="14" Click="Menu_4_6_Click" ToolTip="Показать ТОП-3 зелёных чаёв по весу"/>
+            </MenuItem>
+        </Menu>
+
+         <DataGrid Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1" />
+
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <Button Name="Save_button" Content="Save changes" FontSize="20" Margin="0,5,0,5" Click="Save_button_Click" Height="58" />
+        </StackPanel>
+    </Grid>
+</Window>
